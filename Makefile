@@ -5,10 +5,12 @@ ifeq (${NERSC_HOST}, edison)
         F90FLAGS = "-fopenmp"
         OPT = --opt=-O3 -lgfortran -lifcore
 else ifeq (${NERSC_HOST}, cori)
-        FF = gfortran
+        FF = intelem
         FPY = f2py
         F90FLAGS = "-fopenmp"
-        OPT = --opt=-O3 -lgfortran -lifcore
+        OPT = --opt=-O3 -lifcore
+        
+##        OPT = --opt=-O3 -lgfortran -lifcore
 else
         FF = gfortran
         FPY = f2py-2.7

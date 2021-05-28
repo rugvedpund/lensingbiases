@@ -87,16 +87,16 @@ def checkproc_py():
 	'''
 	nproc = checkproc_f.get_threads()
 	if nproc > 1:
-		print 'You are using ', nproc, ' processors'
+		print('You are using ', nproc, ' processors')
 	else:
-		print '###################################'
-		print 'You are using ', nproc, ' processor'
-		print 'If you want to speed up the computation,'
-		print 'set up correctly your number of task.'
-		print 'e.g in bash, if you want to use n procs,'
-		print 'add this line to your bashrc:'
-		print 'export OMP_NUM_THREADS=n'
-		print '###################################'
+		print('###################################')
+		print('You are using ', nproc, ' processor')
+		print('If you want to speed up the computation,')
+		print('set up correctly your number of task.')
+		print('e.g in bash, if you want to use n procs,')
+		print('add this line to your bashrc:')
+		print('export OMP_NUM_THREADS=n')
+		print('###################################')
 
 def compute_n0_py(
 	from_args=None,
@@ -331,8 +331,8 @@ def minimum_variance_n0(N0_array, N0_names, checkit=False):
 	weights = np.array([[np.sum(submat[i]) for submat in inv_submat_array] for i in range(len(sub_vec))])
 
 	if checkit:
-		print 'Sum of weights = ', np.sum(weights * minimum_variance_n0) / len(minimum_variance_n0)
-		print 'Is sum of weights 1? ',np.sum(weights * minimum_variance_n0) / len(minimum_variance_n0) == 1.0
+		print('Sum of weights = ', np.sum(weights * minimum_variance_n0) / len(minimum_variance_n0))
+		print('Is sum of weights 1? ',np.sum(weights * minimum_variance_n0) / len(minimum_variance_n0) == 1.0)
 
 	return minimum_variance_n0, weights * minimum_variance_n0
 
